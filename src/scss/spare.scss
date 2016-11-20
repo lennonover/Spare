@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* 翻译开始 */
+.spareWindow{
+	font-family: arial,sans-serif;
+	color: #222;
+	font-size: 13px;
+    line-height: 18px;
+	position: absolute;
+	z-index: 99;
+	padding: 8px;
+	border:1px solid #EAEAEA;
+	box-shadow: 3px;
+	background: #fff;
+	border-radius: 5px;
+	min-width: 120px;
+	.spare-content{
+		height: 20px;
+		font-size: 16px;
+	}
+	.spare-pronunciation i{
+		display: inline-block;
+		height: 12px;
+		width: 12px;
+		margin: -4px 2px 0px 5px;
+	    vertical-align: middle;
+	    &:hover{
+			cursor: pointer;
+	    };
+	}
+}
+/* 翻译结束 */
+/* 分页开始 */
+.space-paging{
+	a{
+		padding:3px 8px;
+		border:1px solid #666;
+		margin:2px;
+		color:black;
+		text-decoration:none;
+		border-radius: 5px;padding:3px 8px;
+		border:1px solid #666;
+		margin:2px;
+		color:black;
+		text-decoration:none;
+		border-radius: 5px;
+	}
+	.active-preNext{
+		border:1px solid #EAEAEA;
+		color: #EAEAEA;
+	}
+	
+}
+.active-page{
+	background:#005689;
+	border:none !important;
+	color:#fff !important;
+}
+/* 分页结束 */

@@ -1,0 +1,43 @@
+{
+    // 必须
+      "name": "SPARE",
+      "version": "0.1",
+      "manifest_version": 2,
+      // 建议
+      "description": "更好的阅读体验",
+      "icons": {
+          "48": "imgs/spare.png" ,
+          "16" : "imgs/spare.png"      
+      },
+      //  "default_locale": "en",   指定这个扩展保的缺省字符串的子目录：_lcoales。如果扩展有_locales目录，这个字段是必须的。如果没有_locales目录，这个字段是必须不存在的。
+      // 多选一，或者都不提供
+      /*"browser_action": {
+        "default_icon": "" ,
+        "default_title": "",
+        "default_popup": ""
+      },*/
+      "permissions":["http://*/*"],
+      //选项
+      //"options_page": "",
+      "permissions": [
+        "storage",
+        "<all_urls>"
+      ],
+      "content_scripts": [
+      {
+        "matches":[ "http://*/*", "https://*/*" ],
+        "exclude_matches":["https://www.theguardian.com/**"],
+        "css":["css/spare.css"],
+        "js":["js/libs/jquery-2.1.4.min.js","js/libs/wltpl.js","js/views/content_script.js"]
+      },
+      {
+        "matches":["https://www.theguardian.com/**/**"],
+        "css":["css/spare.css"],
+        "js":["js/libs/jquery-2.1.4.min.js","js/libs/wltpl.js","js/views/content_script.js"]
+      }
+      ],
+      //"content_security_policy": "script-src 'self' http://media.shanbay.com; object-src 'self'",
+      "web_accessible_resources": [
+       "imgs/pron.png"
+     ]
+}
