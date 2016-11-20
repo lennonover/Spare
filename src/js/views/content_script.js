@@ -2,11 +2,11 @@
  * [Author] 王艳磊
  * [Data] 2016-11-18
  * [description]
- * @param  {Object} ){	var mx,my,mpagex,mpagey;	var tpl [description]
+ * @param  {[type]} ){	var spare_mx,spare_my,spare_mpagex,spare_mpagey,toggleSpare,show_per_page,number_of_pages,number_of_items,incal [description]
  * @return {[type]}         [description]
  */
 $(function(){
-	var mx,my,mpagex,mpagey,toggleSpare,show_per_page,number_of_pages,number_of_items,incal = false;
+	var spare_mx,spare_my,spare_mpagex,spare_mpagey,toggleSpare,show_per_page,number_of_pages,number_of_items,incal = false;
 	// 用户偏好配置项
 	var options ={
 		toggle:true
@@ -75,18 +75,18 @@ $(function(){
 		// 获取选中对象
 		translate:function(e){
 			var e = e || window.event;
-			var selObj = document.getSelection();
-			if (selObj.anchorNode && selObj.anchorNode.nodeType == 3) {
-				var selWord = selObj.toString();
+			var spare_selobj = document.getSelection();
+			if (spare_selobj.anchorNode && spare_selobj.anchorNode.nodeType == 3) {
+				var selWord = spare_selobj.toString();
 				if (selWord == "") {
 				  return;
 				}
 				selWord = selWord.replace('-\n','');
 				selWord = selWord.replace('\n', ' ');
-				mx = e.clientX;
-				my = e.clientY;
-				mpagex =e.pageX;
-				mpagey =e.pageY;
+				spare_mx = e.clientX;
+				spare_my = e.clientY;
+				spare_mpagex =e.pageX;
+				spare_mpagey =e.pageY;
 				this.showTran(selWord);
 			}
 		},
@@ -126,45 +126,45 @@ $(function(){
 			$('body').append(str);
 			var imgUrl= "url("+chrome.extension.getURL('imgs/pron.png')+")";
 			$('.spare-pronunciation i').css("background-image",imgUrl);
-			var _spareHeight=$(".spareWindow").height();
-			var _sparewidth=$(".spareWindow").width();
-			if(my < _spareHeight+10){
-				if(mx < _sparewidth/2){
+			var spare_height=$(".spareWindow").height();
+			var spare_width=$(".spareWindow").width();
+			if(spare_my < spare_height+10){
+				if(spare_mx < spare_width/2){
 					$(".spareWindow").animate({
 				        left : 5,
-				        top : mpagey + 20,
+				        top : spare_mpagey + 20,
 				        opacity : "show"
 				    }, 10);
-				}else if($(window).width() - mx < _sparewidth){
+				}else if($(window).width() - spare_mx < spare_width){
 					$(".spareWindow").animate({
-				        left : $(window).width()-_sparewidth - 30,
-				        top : mpagey + 20,
+				        left : $(window).width()-spare_width - 30,
+				        top : spare_mpagey + 20,
 				        opacity : "show"
 				    }, 10);
 				}else{
 					$(".spareWindow").animate({
-				        left : mpagex + 8,
-				        top : mpagey + 8,
+				        left : spare_mpagex + 8,
+				        top : spare_mpagey + 8,
 				        opacity : "show"
 				    }, 10);
 				}
 			}else{
-			    if(mx < _sparewidth/2){
+			    if(spare_mx < spare_width/2){
 					$(".spareWindow").animate({
 				        left : 5,
-				        top : mpagey - _spareHeight -30,
+				        top : spare_mpagey - spare_height -30,
 				        opacity : "show"
 				    }, 10);
-				}else if($(window).width() - mx < _sparewidth){
+				}else if($(window).width() - spare_mx < spare_width){
 					$(".spareWindow").animate({
-				        left : $(window).width()-_sparewidth - 30,
-				        top : mpagey - _spareHeight -30,
+				        left : $(window).width()-spare_width - 30,
+				        top : spare_mpagey - spare_height -30,
 				        opacity : "show"
 				    }, 10);
 				}else{
 					$(".spareWindow").animate({
-				        left : mpagex,
-				        top : mpagey - _spareHeight -30,
+				        left : spare_mpagex,
+				        top : spare_mpagey - spare_height -30,
 				        opacity : "show"
 				    }, 10);
 				}
