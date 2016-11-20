@@ -46,7 +46,7 @@
             ├──scss           // scss文件
             ├──view           // 项目视图HTML
             └──mainfes.json   // chrome配置文件
-        ├──gulppfile.js       // gulp配置文件
+        ├──gulpfile.js        // gulp配置文件
         └──package.json       // npm包
 
 
