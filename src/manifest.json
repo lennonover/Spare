@@ -1,7 +1,7 @@
 {
     // 必须
       "name": "SPARE",
-      "version": "0.1",
+      "version": "0.2",
       "manifest_version": 2,
       // 建议
       "description": "更好的阅读体验",

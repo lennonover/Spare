@@ -55,3 +55,7 @@
 - 直接扩展安装的crx在build目录下 `assets.crx`
 - 开发模式下安装的是在 build/asstes 文件夹里
 
+## 更新
+
+- 修复分页问题 V0.2
+
