@@ -241,14 +241,20 @@ $(function(){
 				case 0:
 					$(".previous-link").addClass('active-preNext')
 					$(".next-link").removeClass('active-preNext')
+					$(".content__head").show();
+					$(".media-primary").show();
 					break;
 				case number_of_pages -1:
 					$(".previous-link").removeClass('active-preNext')
 					$(".next-link").addClass('active-preNext')
+					$(".content__head").hide();
+					$(".media-primary").hide();
 					break;
 				default:
 					$(".previous-link").removeClass('active-preNext')
 					$(".next-link").removeClass('active-preNext')
+					$(".content__head").hide();
+					$(".media-primary").hide();
 					break;
 			}
 			start_from = page_num * show_per_page;
