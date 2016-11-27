@@ -291,15 +291,15 @@ $(function(){
 		resolution:function(){
 			var that = this;
 			switch (true) {
-				case screen.height <= 480:
+				case screen.width <= 320:
 					show_per_page = 4;
 					that.pagingFun();
 					break;
-				case screen.height <= 763:
+				case screen.width <= 414:
 					show_per_page = 6;
 					that.pagingFun();
 					break;
-				case screen.height <= 1024:
+				case screen.width <= 768:
 					show_per_page = 8;
 					that.pagingFun();
 					break;
