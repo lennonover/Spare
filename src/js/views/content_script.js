@@ -291,21 +291,27 @@ $(function(){
 		resolution:function(){
 			var that = this;
 			switch (true) {
-				case screen.width <= 320:
+				case document.body.clientWidth <= 320:
 					show_per_page = 4;
 					that.pagingFun();
 					break;
-				case screen.width <= 414:
+				case document.body.clientWidth <= 414:
 					show_per_page = 6;
 					that.pagingFun();
 					break;
-				case screen.width <= 768:
+				case document.body.clientWidth <= 768:
 					show_per_page = 8;
+					that.pagingFun();
+					break;
+				case document.body.clientWidth <= 1024:
+					show_per_page = 12;
 					that.pagingFun();
 					break;
 				default:
 					show_per_page = number_of_items;
 					that.pagingFun();
+					$(".content__head").show();
+					$(".media-primary").show();
 					$(".space-paging") && $(".space-paging").remove();
 					break;
 
